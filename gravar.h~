@@ -1,0 +1,15 @@
+void gravar(){
+	FILE *file;
+		
+	if ( (file = fopen( "BD.bin", "wb+" )) == NULL ) {
+	        perror("can't open: ");
+	        exit(-1);
+	}
+	
+	for(med=medicamentos; med != NULL; med=med->hh.next) {
+	
+		fwrite(med,sizeof(struct Medicamento),1,file);   
+     
+	}
+
+}

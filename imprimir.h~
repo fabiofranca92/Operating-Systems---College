@@ -1,0 +1,13 @@
+
+
+void imprimir(int quantidade,FILE *f){
+	int i = 0;
+	for(med=medicamentos; med != NULL; med=(struct Medicamento*)(med->hh.next)) {
+	       		 fprintf(f,"Nome : %s\t Nr de Vendas %i\n", med->nome, med->vendas);
+			 i++;
+			 if(quantidade == i){
+				med = NULL;
+				
+			}	
+	}
+}
